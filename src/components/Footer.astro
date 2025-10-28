@@ -1,6 +1,71 @@
 ---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
 ---
-<div>
-<p>Footer - tilføj footerindhold</p>
+
+<div class="bg-green-primary mt-20 text-white lg:px-[100px] px-[30px] py-15">
+  <section class="flex flex-col gap-10 lg:flex-row lg:justify-between">
+    <div>
+      <div class="mb-4">
+        <Heading htmlheading="h4" size="small" font="display" transform="uppercase">HöjskolenDk</Heading>
+      </div>
+      <p class="text-xs">
+        Rosenørns Allé 31 <br />1970 Frederiksberg<br />Danmark<br />Telefon: 7027 9007<br />Mandag til Fredag // Kl. 10.00-16.00<br />Email: info@hojskolendk.dk
+      </p>
+    </div>
+
+    <div>
+      <div class="mb-4">
+        <Heading htmlheading="h4" size="small" font="display" transform="uppercase">GODT AT VIDE</Heading>
+      </div>
+      <div class="text-xs hover:cursor-pointer">
+        <p class="hover:underline">FAQ</p>
+        <p class="hover:underline">Job</p>
+        <p class="hover:underline">Bæredygtighed</p>
+        <p class="hover:underline">Rejsegarantifonden</p>
+        <p class="hover:underline">Fra tilmelding til afrejse</p>
+        <p class="hover:underline">Generelle bestemmelser</p>
+        <p class="hover:underline">Grupperejser for unge</p>
+        <p class="hover:underline">Rejs i sabbatår</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="mb-4">
+        <Heading htmlheading="h4" size="small" font="display" transform="uppercase">HØJSKOLE I UDLANDET</Heading>
+      </div>
+      <div class="text-xs hover:cursor-pointer">
+        <p class="hover:underline">Højskole i Maldiverne, Sri Lanka, Bali, Gili Islands, Japan & Australien</p>
+        <p class="hover:underline">Højskole i Australien, New Zealand, Vietnal, Bali, Gili Islands & Lombok</p>
+        <p class="hover:underline">Højskole i Brasilien, Colombia, Costa Rica & Mexico</p>
+        <p class="hover:underline">Højskole i Costa Rica, Mexico & Colombia</p>
+        <p class="hover:underline">Højskole i Indien, Nepal, Thailand, Vietnam & Sri Lanka</p>
+        <p class="hover:underline">Højskole i Hawaii, Australien, Japan, Bali & Gili Islands</p>
+        <p class="hover:underline">Højskole i Maldiverne, Sri Lanka, Bali & Gili Islands</p>
+        <p class="hover:underline">Højskole i Brasilien, Bolivia, Colombia, Ecuador, Peru & Argentina</p>
+        <p class="hover:underline">Højskole i Australien, Japan, Bali & Gili Islands</p>
+        <p class="hover:underline">Sommer på stranden</p>
+        <p class="hover:underline">Sommer i storbyen</p>
+        <p class="hover:underline">Sommer i Japan</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-15">
+    <div class="-mb-2">
+      <Heading htmlheading="h4" size="small" font="display" transform="uppercase">SAMARBEJDSPARTNERE</Heading>
+    </div>
+    <div class="flex flex-col gap-12 lg:flex-row lg:justify-between">
+      <img src="/partners.png" alt="Logos of partners" class="w-110" />
+      <img src="/logo.svg" alt="Logos of rejse höjskolen dk" class="w-15" />
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <div class="text-xs flex flex-col lg:gap-10 gap-1 lg:flex-row lg:justify-between">
+      <p class="">HÖJSKOLENDK er medlem af Rejsegarantifonden.</p>
+      <p class="hover:cursor-pointer hover:underline">Handelsbetingelser / Cookiepolitik / Data- & Privatlivspolitik</p>
+      <p class="">Copyright © HÖJSKOLENDK 2022 • CVR 32491162</p>
+    </div>
+  </section>
 </div>
-  
