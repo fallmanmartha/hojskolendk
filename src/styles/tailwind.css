@@ -7,21 +7,19 @@
 
 @theme {
   /*Size */
-  --text-mobile-h1: 55px;
-  --text-mobile-h2: 45px;
-  --text-mobile-h3: 24px;
-  --text-mobile-h4: 16px;
+  --text-mobile-h1: 35px;
+  --text-mobile-h2: 20px;
+  --text-mobile-h3: 18px;
+  --text-mobile-h4: 14px;
   --text-mobile-p: 12px;
-  --text-mobile-ctasmall: 12px;
-  --text-mobile-ctalarge: 15px;
+  --text-mobile-cta: 14px;
 
-  --text-computer-h1: 9.2vw;
-  --text-computer-h2: 6vw;
-  --text-computer-h3: 64px;
-  --text-computer-h4: 32px;
-  --text-computer-p: 18px;
-  --text-computer-ctasmall: 16px;
-  --text-computer-ctalarge: 20px;
+  --text-computer-h1: 100px;
+  --text-computer-h2: 40px;
+  --text-computer-h3: 24px;
+  --text-computer-h4: 18px;
+  --text-computer-p: 16px;
+  --text-computer-cta: 20px;
 
   /*Typografi */
   --font-heading: "Unbounded", sans-serif;
