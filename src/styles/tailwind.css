@@ -26,11 +26,11 @@
   --font-body: "inter", sans-serif;
 
   /* Colours */
-  --colour-orange-primary: #ff5900;
-  --colour-orange-secondary: #ff6716;
+  --color-orange-primary: #ff5900;
+  --color-orange-secondary: #ff6716;
 
-  --colour-green-primary: #194246;
-  --colour-green-secondary: #3a6666;
+  --color-green-primary: #194246;
+  --color-green-secondary: #3a6666;
 }
 /* Her tilføjes theme variable // tokens */
 
