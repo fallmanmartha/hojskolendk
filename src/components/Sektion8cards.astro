@@ -7,7 +7,7 @@ import Text from "./Text.astro";
   <article :class="openIndex === 0 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-500">
     <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-[opacity,transform] duration-500">
       <div class="relative h-full flex-1 min-w-0">
-        <img src="/bike.png" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <img src="/bike.jpg" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
         <button @click="openIndex = (openIndex === 0 ? null : 0)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full" aria-label="Toggle content" :aria-expanded="openIndex === 0">
           <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 0 ? 'rotate-180' : 'rotate-0'" />
         </button>
