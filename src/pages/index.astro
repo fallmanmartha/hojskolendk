@@ -1,15 +1,21 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Button from '../components/Button.astro';
-import Link from '../components/Link.astro';
-import { Image } from 'astro:assets';
+import Button from "../components/Button.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
+import Heading from "../components/Heading.astro";
 ---
+
 <MainLayout title="Titel">
-	<article>
-		<h1>Index overskrift</h1>
-		<Button>Klik!</Button>
-		<p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
-		<Image src={thumbsup} alt=""></Image>
-	</article>
+  <article>
+    <div>
+      <Heading htmlheading="h1" size="small" font="display" transform="uppercase">METTE KELTER</Heading>
+    </div>
+    <Button>Klik!</Button>
+    <Button variant="secondary">Klik!</Button>
+    <Button variant="third">Stor tredje knap</Button>
+    <p>Link til <Link href="https://www.kea.dk" target="_blank">En anden side</Link></p>
+    <Image src={thumbsup} alt="" />
+  </article>
 </MainLayout>
