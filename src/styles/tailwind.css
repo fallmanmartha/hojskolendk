@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @plugin '@tailwindcss/typography';
 @plugin '@tailwindcss/forms';
@@ -6,8 +6,35 @@
 @import "tailwindcss-intersect";
 
 @theme {
-  /* Her tilføjes theme variable // tokens */
+  /*Size */
+  --text-mobile-h1: 55px;
+  --text-mobile-h2: 45px;
+  --text-mobile-h3: 24px;
+  --text-mobile-h4: 16px;
+  --text-mobile-p: 12px;
+  --text-mobile-ctasmall: 12px;
+  --text-mobile-ctalarge: 15px;
+
+  --text-computer-h1: 9.2vw;
+  --text-computer-h2: 6vw;
+  --text-computer-h3: 64px;
+  --text-computer-h4: 32px;
+  --text-computer-p: 18px;
+  --text-computer-ctasmall: 16px;
+  --text-computer-ctalarge: 20px;
+
+  /*Typografi */
+  --font-heading: "futura-pt", sans-serif;
+  --font-body: "inter", sans-serif;
+
+  /* Colours */
+  --colour-orange-primary: #ff5900;
+  --colour-orange-secondary: #ff6716;
+
+  --colour-green-primary: #194246;
+  --colour-green-secondary: #3a6666;
 }
+/* Her tilføjes theme variable // tokens */
 
 @layer base {
   *,
@@ -19,9 +46,7 @@
   }
 }
 
-@layer components{
-
+@layer components {
 }
-@layer utilities{
-  
+@layer utilities {
 }
