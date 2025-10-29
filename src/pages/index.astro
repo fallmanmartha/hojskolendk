@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
 ---
 
 <MainLayout title="Titel">
@@ -10,6 +11,9 @@ import Heading from "../components/Heading.astro";
     <div>
       <Heading htmlheading="h1" size="small" font="display" transform="uppercase">METTE KELTER</Heading>
     </div>
+    <Text teksttype="brødtekst" styling="regular">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores magnam repellat veritatis, laboriosam adipisci eos ad non voluptatum, voluptatibus deserunt fugiat fuga laborum aut porro repellendus beatae, saepe laudantium! Quis!
+    </Text>
     <Button>Klik!</Button>
     <Button variant="secondary">Klik!</Button>
     <Button variant="third">Stor tredje knap</Button>
