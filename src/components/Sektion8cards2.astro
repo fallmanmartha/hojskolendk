@@ -1,0 +1,80 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+---
+
+<section x-data="{ openIndex: null }" class="hidden gap-6 lg:flex">
+  <article :class="openIndex === 0 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-500">
+    <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-[opacity,transform] duration-500">
+      <div class="relative h-full flex-1 min-w-0">
+        <img src="/boat.png" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <button @click="openIndex = (openIndex === 0 ? null : 0)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full" aria-label="Toggle content" :aria-expanded="openIndex === 0">
+          <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 0 ? 'rotate-180' : 'rotate-0'" />
+        </button>
+      </div>
+      <div
+        class="relative z-10 self-center rounded-2xl bg-white text-gray-800 transition-[opacity,transform] duration-500
+ overflow-hidden"
+        :class="openIndex === 0 ? 'm-2 w-[48%] basis-[48%] opacity-100 translate-x-0' : 'm-0 p-0 w-0 basis-0 flex-none opacity-0 translate-x-0 pointer-events-none'"
+      >
+        <div class="pl-2">
+          <div class="my-2"><Heading htmlheading="h4" size="small" font="display">En rejse i personlig udvikling</Heading></div>
+          <Text
+            >At rejse med en højskole er ikke blot et eventyr ud i verden - det er også en spændende rejse i forhold til dig og din personlige udvikling. <br /><br /> Du lærer dig selv bedre at kende, opdager nye sider af dig selv og vokser gennem de
+            oplevelser, du får undervejs.</Text
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article :class="openIndex === 1 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-500">
+    <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-[opacity,transform] duration-500">
+      <div class="relative h-full flex-1 min-w-0">
+        <img src="/green.png" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <button @click="openIndex = (openIndex === 1 ? null : 1)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center" aria-label="Toggle content" :aria-expanded="openIndex === 1">
+          <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 1 ? 'rotate-180' : 'rotate-0'" />
+        </button>
+      </div>
+      <div
+        class="relative z-10 self-center rounded-2xl bg-white text-gray-800 transition-[opacity,transform] duration-500
+ overflow-hidden"
+        :class="openIndex === 1 ? 'm-6 w-[48%] basis-[48%] opacity-100 translate-x-0' : 'm-0 p-0 w-0 basis-0 flex-none opacity-0 translate-x-0 pointer-events-none'"
+      >
+        <div class="pl-2">
+          <div class="my-5"><Heading htmlheading="h4" size="small" font="display">Højskoleophold året rundt</Heading></div>
+          <Text
+            >HÖJSKOLENDK tilbyder alverdens skønne rejser og ophold, og du kan både komme på højskoleophold i udlandet i løbet af året eller på højskole i udlandet i sommerferien. <br /><br /> Begge muligheder er enormt populære blandt vores skønne højskoleelever.<br
+            />
+            <br /> Højskoleophold i sommerferien er typisk kortere og varer ca. 5 uger. Her oplever du flere lande, kulturer og traditioner, langt fra det danske vi kender. <br />
+            <br /> Det er et oplagt eventyr til dig, der gerne vil rejse, møde andre unge mennesker og udvikle dig i løbet af sommerferien – inden du fx starter på nyt studie eller job.</Text
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article :class="openIndex === 2 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-200">
+    <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-opacity duration-200">
+      <div class="relative h-full flex-1 min-w-0">
+        <img src="/bus.png" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <button @click="openIndex = (openIndex === 2 ? null : 2)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full" aria-label="Toggle content" :aria-expanded="openIndex === 2">
+          <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 2 ? 'rotate-180' : 'rotate-0'" />
+        </button>
+      </div>
+      <div
+        class="relative z-10 self-center rounded-2xl bg-white text-gray-800 transition-[opacity,transform] duration-500
+ overflow-hidden"
+        :class="openIndex === 2 ? 'm-6 w-[48%] basis-[48%] opacity-100 translate-x-0' : 'm-0 p-0 w-0 basis-0 flex-none opacity-0 translate-x-0 pointer-events-none'"
+      >
+        <div class="pl-2">
+          <div class="my-5"><Heading htmlheading="h4" size="small" font="display">Dit livs eventyr venter</Heading></div>
+          <Text
+            >Vores højskoleophold i løbet af året varer mellem 2-3 måneder og er oplagt for dig, der holder sabbatår og gerne vil ud og opleve verden, mens du udvikler dig selv på et personligt plan. <br /><br />
+            Tag på højskole i udlandet med andre og få en uforglemmelig oplevelse - vi tør godt love dig, at det bliver dit livs eventyr!
+          </Text>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>

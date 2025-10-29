@@ -1,0 +1,80 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+---
+
+<section x-data="{ openIndex: 0 }" class="hidden gap-6 lg:flex">
+  <article :class="openIndex === 0 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-500">
+    <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-[opacity,transform] duration-500">
+      <div class="relative h-full flex-1 min-w-0">
+        <img src="/bike.jpg" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <button @click="openIndex = (openIndex === 0 ? null : 0)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full" aria-label="Toggle content" :aria-expanded="openIndex === 0">
+          <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 0 ? 'rotate-180' : 'rotate-0'" />
+        </button>
+      </div>
+      <div
+        class="relative z-10 self-center rounded-2xl bg-white text-gray-800 transition-[opacity,transform] duration-500
+ overflow-hidden"
+        :class="openIndex === 0 ? 'm-2 w-[48%] basis-[48%] opacity-100 translate-x-0' : 'm-0 p-0 w-0 basis-0 flex-none opacity-0 translate-x-0 pointer-events-none'"
+      >
+        <div class="pl-2">
+          <div class="my-2"><Heading htmlheading="h4" size="small" font="display">Drømmen om højskole i udlandet</Heading></div>
+          <Text
+            >Drømmer du om at rejse på højskole i udlandet for unge? Når du rejser med HÖJSKOLENDK, får du dit livs eventyr, og vi garanterer dig masser af fællesskab, fantastiske oplevelser og meningsfuld læring. <br /><br /> Et højskoleophold i udlandet
+            er noget, du bare skal prøve mindst én gang i dit liv – du vil aldrig fortryde, at du tog afsted. Og du kan glæde dig til nye venskaber og oplevelser for livet.</Text
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article :class="openIndex === 1 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-500">
+    <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-[opacity,transform] duration-500">
+      <div class="relative h-full flex-1 min-w-0">
+        <img src="/machu.png" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <button @click="openIndex = (openIndex === 1 ? null : 1)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center" aria-label="Toggle content" :aria-expanded="openIndex === 1">
+          <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 1 ? 'rotate-180' : 'rotate-0'" />
+        </button>
+      </div>
+      <div
+        class="relative z-10 self-center rounded-2xl bg-white text-gray-800 transition-[opacity,transform] duration-500
+ overflow-hidden"
+        :class="openIndex === 1 ? 'm-6 w-[48%] basis-[48%] opacity-100 translate-x-0' : 'm-0 p-0 w-0 basis-0 flex-none opacity-0 translate-x-0 pointer-events-none'"
+      >
+        <div class="pl-2">
+          <div class="my-5"><Heading htmlheading="h4" size="small" font="display">Rejs ud i verden med HÖJSKOLENDK</Heading></div>
+          <Text
+            >Med HÖJSKOLENDK kan du komme på rejsende højskole i stort set alle hjørner af verdenen. <br /><br /> Drømmer du om smukke og vilde naturoplevelser på Bali, Hawaii, Maldiverne eller i Australien? Storbyseventyr i Sydney, Tokyo, Bangkok eller
+            Rio de Janeiro? Kulturelle oplevelser og autentiske menneskemøder i Indien, Bolivia, Sri Lanka, Japan eller Mexico? Fede adventure aktiviteter med masser af adrenalin i New Zealand, Nepal, Ecuador eller Costa Rica? <br />
+            <br /> Vælg mellem et af vores fantastiske højskoleophold i udlandet, og lad verden gøre dig endnu mere nysgerrig.</Text
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article :class="openIndex === 2 ? 'basis-[60%]' : 'basis-[25%]'" class="transition-[flex-basis] duration-200">
+    <div class="relative flex h-[450px] rounded-3xl overflow-hidden shadow-lg transition-opacity duration-200">
+      <div class="relative h-full flex-1 min-w-0">
+        <img src="/group.png" alt="Drømmen om højskole i udlandet" class="absolute inset-0 h-full w-full object-cover" />
+        <button @click="openIndex = (openIndex === 2 ? null : 2)" class="absolute right-4 top-4 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full" aria-label="Toggle content" :aria-expanded="openIndex === 2">
+          <img src="/arrow90.svg" alt="" class="h-24 w-24 transform transition-opacity duration-300" :class="openIndex === 2 ? 'rotate-180' : 'rotate-0'" />
+        </button>
+      </div>
+      <div
+        class="relative z-10 self-center rounded-2xl bg-white text-gray-800 transition-[opacity,transform] duration-500
+ overflow-hidden"
+        :class="openIndex === 2 ? 'm-6 w-[48%] basis-[48%] opacity-100 translate-x-0' : 'm-0 p-0 w-0 basis-0 flex-none opacity-0 translate-x-0 pointer-events-none'"
+      >
+        <div class="pl-2">
+          <div class="my-5"><Heading htmlheading="h4" size="small" font="display">Fællesskab og tryghed på rejsen</Heading></div>
+          <Text
+            >Du rejser altid med andre unge mennesker på din egen alder samt danske rejseledere og undervisere.<br /><br /> På højskolerejsen kommer du ikke kun til at opleve og forstå andre spændende kulturer - rejserne giver også et unikt indblik i
+            dig selv. <br /><br />
+            Du kommer hjem med mere selvtillid og selvværd og står endnu stærkere som menneske.</Text
+          >
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
