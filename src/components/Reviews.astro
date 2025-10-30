@@ -1,0 +1,55 @@
+---
+import Heading from "./Heading.astro";
+
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+---
+
+<section class="bg-green-primary text-white grid grid-cols-1 pt-15 pl-6 pr-6 md:grid-cols-11 md:grid-rows-4 md:gap-6 md:pt-25 md:pb-10">
+  <!-- Første billede -->
+  <div class="col-start-1 row-start-1 md:col-start-2 md:col-span-3 md:row-start-1 md:row-span-2">
+    <img src="/malthe.png" alt="Billede af dreng" class="w-full h-full object-cover rounded-3xl shadow-lg" />
+  </div>
+  <div class="col-start-1 md:col-start-2 md:col-span-3 md:row-start-3 md:row-span-3">
+    <div class="mb-2 mt-6 md:mb-4 md:mt-0">
+      <Heading htmlheading="h3" size="medium" font="display" transform="uppercase"> Malthe Pedersen </Heading>
+    </div>
+
+    <Text> Jeg anbefaler Höjskolendk fordi man både har mulighed for at bestemme en masse selv hvad man har lyst til at opleve og at der også allerede er planlagt en masse fede oplevelser. Det er bestemt noget man skulle opleve! </Text>
+    <img src="/stars.png" alt="stjerner" class="w-35 mb-12 mt-6 md:w-45 h-auto md:mt-6" />
+  </div>
+  <div class="col-start-1 row-start-1 md:col-start-1 md:col-span-2 md:row-start-1 md:row-span-1"><img src="/trustpilot.png" alt="Trustpilot" class="w-45 md:w-55 h-auto" /></div>
+
+  <!-- Andet billede -->
+  <div class="md:col-span-3 md:row-start-1 md:row-span-2">
+    <img src="/maja.png" alt="Billede af pige" class="w-full h-full object-cover rounded-3xl shadow-lg" />
+  </div>
+  <div class="md:col-span-3 md:row-start-3 md:row-span-2">
+    <div class="mb-2 mt-6 md:mb-4 md:mt-0">
+      <Heading htmlheading="h3" size="medium" font="display" transform="uppercase"> MAJA KØHLER BAY </Heading>
+    </div>
+    <Text>
+      En klar anbefaling herfra. Jeg nød virkelig at rejsen var planlagt på forhånd. Det gjorde at man kunne fokusere på at nyde rejsen og lære de andre at kende. Det var dog rart også at have friuger, så vi også selv kunne prøve af hvordan det er at
+      rejse i mindre grupper med egen planlægning. Det er nogle fantastiske rejseledere der virkelig sørger for at turen bliver noget specielt.
+    </Text>
+    <img src="/stars.png" alt="stjerner" class="w-35 mb-12 mt-6 md:w-45 h-auto md:mt-6" />
+  </div>
+
+  <!-- Tredje billede -->
+  <div class="md:col-span-3 md:row-start-1 md:row-span-2">
+    <img src="/therese.png" alt="Billede af pige" class="w-full h-full object-cover rounded-3xl shadow-lg" />
+  </div>
+  <div class="md:col-span-3 md:row-start-3 md:row-span-2">
+    <div class="mb-2 mt-6 md:mb-4 md:mt-0">
+      <Heading htmlheading="h3" size="medium" font="display" transform="uppercase"> THERESE ROSS </Heading>
+    </div>
+    <Text>
+      Jeg var afsted en måned til Bali med Höjskolendk, og selvom vejret drillede de første par uger, håndterede de det super professionelt. Planerne blev hurtigt ændret, så vi alligevel fik masser spændende oplevelser. Da vejret vendte, fik vi de
+      smukkeste dage med sol og udflugter. Alt var velorganiseret, og servicen var i top jeg kan varmt anbefale Höjskolendk!
+    </Text>
+    <img src="/stars.png" alt="stjerner" class="w-35 mb-8 mt-6 md:w-45 h-auto md:mt-6" />
+    <div class="mb-15 md:mt-8">
+      <Button variant="third" size="large">SE FLERE ANMELDELSER</Button>
+    </div>
+  </div>
+</section>
