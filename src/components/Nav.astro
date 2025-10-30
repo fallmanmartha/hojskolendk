@@ -1,0 +1,58 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+import Button from "./Button.astro";
+---
+
+<header x-data="{ showmenu: false }" class="">
+  <div id="navbar" class="container mx-auto p-2 flex flex-row justify-between items-center">
+    <div id="logo" class="mt-4">
+      <a href="/" class="font-display text-4xl"> <img class="lg:w-20 w-20" src="/logo.svg" alt="" /> </a>
+    </div>
+    <nav id="desktopmenu" class="hidden lg:block text-white">
+      <ul class="flex flex-row gap-4 items-center">
+        <li class="mt-5">
+          <a href="/" class={currentPath === "/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>HØJSKOLEOHOLD</a>
+        </li>
+        <li class="mt-5">
+          <a href="/" class={currentPath === "/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>SOMMERHØJSKOLE</a>
+        </li>
+        <li class="mt-5">
+          <a href="/" class={currentPath === "/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>PRISER</a>
+        </li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+        <li class="mt-5"><a href="/info/" class={currentPath === "info/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>Info</a></li>
+        <li class="">
+          <a href="/share/">
+            <Button variant="third">Infomøder</Button>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <Button>Tilmeld</Button>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden w-15" x-on:click="showmenu = ! showmenu"><img src="/burgericon.svg" alt="burgericon" /> </button>
+  </div>
+  <nav id="mobilmenu" class="flex flex-col content-center bg-green-primary pt-45 pb-20 pl-20 -mt-30 text-white" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+    <ul>
+      <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-regular font-display uppercase" : "font-light font-display uppercase"}>HØJSKOLEOHOLD</a></li>
+
+      <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>SOMMERHØJSKOLE</a></li>
+      <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>PRISER</a></li>
+      <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>oM OS</a></li>
+      <li class="text-left">
+        <a href="">
+          <Button variant="third">Infomøder</Button>
+        </a>
+      </li>
+
+      <li class="text-left">
+        <a href="">
+          <Button>Tilmeld</Button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
