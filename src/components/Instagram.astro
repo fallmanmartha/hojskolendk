@@ -1,0 +1,28 @@
+---
+import Heading from "./Heading.astro";
+
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+---
+
+<section class="bg-green-primary text-white grid grid-cols-1 pl-6 pr-6 md:grid-cols-12 md:gap-4 md:pt-20 md:pb-15">
+  <div class="md:col-start-8 md:col-span-3">
+    <div class="mt-12">
+      <div class="mb-4">
+        <Heading htmlheading="h3" size="medium" font="display" transform="uppercase">Følg med på vores Instagram! </Heading>
+      </div>
+      <Text>Få et glimt af hverdagen på højskolen – fra rejser og workshops til fællesskab og uforglemmelige oplevelser. <br /> <br />Følg os på @hojskolendk og bliv en del af eventyret!</Text>
+    </div>
+    <div class="mb-0 md:mt-4">
+      <Button variant="third" size="large">Følg os her</Button>
+    </div>
+  </div>
+  <div class="md:col-start-3 md:col-span-3 md:row-start-1 md:z-100 md:self-end">
+    <div class="flex justify-end md:justify-normal">
+      <img src="/klistermærke1.png" class="w-50 h-auto md:w-60" />
+    </div>
+  </div>
+  <div class="md:col-start-4 md:col-span-4 md:row-start-1">
+    <div><img src="/instagram.png" alt="Instagramside" class="w-full h-full pb-12" /></div>
+  </div>
+</section>
