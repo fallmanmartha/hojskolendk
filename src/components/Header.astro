@@ -1,62 +1,48 @@
 ---
-const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.slice(1); // remove the first "/"
-import Button from "./Button.astro";
+import Nav from "./Nav.astro";
+const hasContentBelowNav = Astro.slots.has("default");
+import Heading from "./Heading.astro";
+import Herocards from "./Herocards.astro";
 ---
 
-<header x-data="{ showmenu: false }" class="">
-  <div id="navbar" class="container mx-auto p-2 flex flex-row justify-between items-center">
-    <div id="logo" class="">
-      <a href="/" class="font-display text-4xl"> <img class="lg:w-20 w-20" src="/logo.svg" alt="" /> </a>
+<section
+  class="relative lg:mt-0 w-auto
+         h-[830px] md:h-[800px] /* samma känsla på mobil/desktop */
+         bg-[url('/mountain.png')]
+         bg-cover bg-no-repeat
+         bg-[center_35%] md:bg-[center_55%] /* styr fokuspunkt mobil vs desktop */
+         overflow-hidden pb-20"
+>
+  <!-- Navigation -->
+
+  <section class="relative flex flex-col z-20">
+    <Nav />
+    {
+      hasContentBelowNav && (
+        <div class="flex flex-col">
+          <slot />
+        </div>
+      )
+    }
+  </section>
+  <!-- Innehållslager ovanpå bakgrunden -->
+  <div class="absolute inset-0 z-10">
+    <div class="mx-auto max-w-[1200px] px-4">
+      <!-- Rubriker -->
+      <div class="pt-45 md:pt-42 ml-10 text-white">
+        <Heading htmlheading="h1" size="xlarge" font="display" transform="uppercase">
+          Højskole <br /> i Udlandet
+        </Heading>
+      </div>
+
+      <div class="mt-3 md:mt-4 ml-10 text-white">
+        <Heading htmlheading="h3" size="medium" font="display"> Eventyrlige højskoleophold i udlandet for unge. </Heading>
+      </div>
+
+      <!-- hero-cards -->
+      <div class="mt-8 md:mt-10 lg:ml-0 ml-8">
+        <Herocards />
+      </div>
     </div>
-    <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-4 items-center">
-        <li class="">
-          <a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>HØJSKOLEOHOLD</a>
-        </li>
-        <li class="">
-          <a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>SOMMERHØJSKOLE</a>
-        </li>
-        <li class="">
-          <a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>PRISER</a>
-        </li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
-        <li class=""><a href="/info/" class={currentPath === "info/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>Info</a></li>
-        <li class="">
-          <a href="/share/">
-            <Button variant="third">Infomøder</Button>
-          </a>
-        </li>
-        <li>
-          <a href="">
-            <Button>Tilmeld</Button>
-          </a>
-        </li>
-      </ul>
-    </nav>
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
-      ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-      </svg>
-    </button>
   </div>
-  <nav id="mobilmenu" class="flex flex-col content-center bg-green-primary pt-45 pb-20 pl-20 -mt-30 text-white" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
-    <ul>
-      <li class="text-left py-2"><a href="/winners/" class={currentPath === "winners/" ? "font-regular font-display uppercase" : "font-light font-display uppercase"}>HØJSKOLEOHOLD</a></li>
-
-      <li class="text-left py-2"><a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>SOMMERHØJSKOLE</a></li>
-      <li class="text-left py-2"><a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>PRISER</a></li>
-      <li class="text-left py-2"><a href="/info/" class={currentPath === "info/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>oM OS</a></li>
-      <li class="text-left">
-        <a href="">
-          <Button variant="third">Infomøder</Button>
-        </a>
-      </li>
-
-      <li class="text-left">
-        <a href="">
-          <Button>Tilmeld</Button>
-        </a>
-      </li>
-    </ul>
-  </nav>
-</header>
+</section>

@@ -7,19 +7,21 @@
 
 @theme {
   /*Size */
-  --text-mobile-h1: 35px;
+  --text-mobile-h1: 50px;
   --text-mobile-h2: 20px;
   --text-mobile-h3: 18px;
   --text-mobile-h4: 14px;
   --text-mobile-p: 12px;
   --text-mobile-cta: 12px;
 
-  --text-computer-h1: 100px;
+  --text-computer-h1: 75px;
   --text-computer-h2: 40px;
   --text-computer-h3: 24px;
   --text-computer-h4: 18px;
   --text-computer-p: 14px;
   --text-computer-cta: 14px;
+
+  --text-hero-cards: 11px;
 
   /*Typografi */
   --font-heading: "Unbounded", sans-serif;

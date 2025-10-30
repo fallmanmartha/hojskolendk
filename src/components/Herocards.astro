@@ -1,0 +1,101 @@
+---
+import Heading from "./Heading.astro";
+
+const cards = [
+  {
+    image: "/ocean.jpg",
+    title: "Maldiverna - Japan - Sri Lanka - Australien - Bali - Gilli Islands",
+  },
+  {
+    image: "/oplev2.png",
+    title: "INDIEN - nepal - thailand - vietnam - sri lanka",
+  },
+  {
+    image: "/australia.jpg",
+    title: "Australien - New zealand - Vietnam - Bali - GILI ISLANDS - Lombok",
+  },
+  {
+    image: "/sail.jpg",
+    title: "HAWAII - AUSTRALIEN - JAPAN - BALI - GILI ISLANDS",
+  },
+  {
+    image: "/snow.jpg",
+    title: "BRASILIEN - BOLIVIA - COLOMBIA - ECUADOR - PERU - ARGENTINA",
+  },
+  {
+    image: "/machu.png",
+    title: "Australien - Lombok - New zealand - Bali - Vietnam- GILI ISLANDS ",
+  },
+  {
+    image: "/feet.jpg",
+    title: "MAldiverne - sri lanka - bali - gili islands",
+  },
+  {
+    image: "/island.png",
+    title: "BRASILIEN - COLOMBIA - mexico - costa rica ",
+  },
+];
+
+const totalCards = cards.length;
+const maxVisibleDesktop = 5;
+const desktopCardWidth = 100 / maxVisibleDesktop;
+---
+
+<section class="">
+  <div
+x-data={`{
+  active: 0,
+  total: ${totalCards},
+  cardWidth: ${desktopCardWidth},
+  maxVisibleDesktop: ${maxVisibleDesktop},
+  init() {
+    const updateWidth = () => {
+      const w = window.innerWidth;
+      if (w >= 1024) {
+        // Desktop: 5 kort
+        this.cardWidth = 100 / this.maxVisibleDesktop;
+      } else if (w >= 768) {
+        // Tablet: 4 kort
+        this.cardWidth = 100 / 4;
+      } else if (w >= 568) {
+        // Liten tablet / stor mobil: 3 kort
+        this.cardWidth = 100 / 3;
+      } else {
+        // Mobil: 2 kort
+        this.cardWidth = 100 / 2;
+      }
+    };
+    updateWidth();
+    window.addEventListener("resize", updateWidth);
+  },
+  prev() { this.active = (this.active - 1 + this.total) % this.total; },
+  next() { this.active = (this.active + 1) % this.total; }
+    }`}
+    class="relative mx-auto mt-10 w-full max-w-[1100px] px-0"
+  >
+    <!-- Karrusel container -->
+    <div class="overflow-hidden">
+      <div class="flex transition-transform duration-500" :style="`transform: translateX(-${active * cardWidth}%);`">
+        {cards.map((card, index) => (
+          <div class="box-border flex-shrink-0 px-2" :style="`width: ${cardWidth}%; max-width: ${cardWidth}%; flex: 0 0 ${cardWidth}%;`">
+            <div class="relative overflow-hidden rounded-2xl">
+              <img src={card.image} alt={card.title} class="h-[270px] w-[200px] object-cover rounded-2xl" loading={index === 0 ? "eager" : "lazy"} />
+              <div class="absolute bottom-0 w-full px-2 py-4 text-left text-white">
+                <Heading htmlheading="h3" size="xxsmall" font="display" transform="uppercase">{card.title}</Heading>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <!-- Pile -->
+    <div class="mb-6 flex items-center gap-0">
+      <button type="button" class="flex h-15 w-15 items-center justify-center rounded-full bg-transparent transition hover:scale-105" @click="prev()" aria-label="Forrige">
+        <img src="/arrow90.svg" alt="Venstre pil" class="h-15 w-15 rotate-180" />
+      </button>
+      <button type="button" class="flex h-15 w-15 items-center justify-center rounded-full bg-transparent transition hover:scale-105" @click="next()" aria-label="Næste">
+        <img src="/arrow90.svg" alt="Højre pil" class="h-15 w-15" />
+      </button>
+    </div>
+  </div>
+</section>
