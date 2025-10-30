@@ -1,5 +1,62 @@
 ---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.slice(1); // remove the first "/"
+import Button from "./Button.astro";
 ---
-<div>
-Header - tilføj navigation mm.
-</div>
+
+<header x-data="{ showmenu: false }" class="">
+  <div id="navbar" class="container mx-auto p-2 flex flex-row justify-between items-center">
+    <div id="logo" class="">
+      <a href="/" class="font-display text-4xl"> <img class="lg:w-20 w-20" src="/logo.svg" alt="" /> </a>
+    </div>
+    <nav id="desktopmenu" class="hidden lg:block">
+      <ul class="flex flex-row gap-4 items-center">
+        <li class="">
+          <a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>HØJSKOLEOHOLD</a>
+        </li>
+        <li class="">
+          <a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>SOMMERHØJSKOLE</a>
+        </li>
+        <li class="">
+          <a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>PRISER</a>
+        </li><!-- alternativt: lav et <a href="">Link</a>, hvis du ikke vil bruge Link.astro komponenten -->
+        <li class=""><a href="/info/" class={currentPath === "info/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>Info</a></li>
+        <li class="">
+          <a href="/share/">
+            <Button variant="third">Infomøder</Button>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <Button>Tilmeld</Button>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
+      ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+      </svg>
+    </button>
+  </div>
+  <nav id="mobilmenu" class="flex flex-col content-center bg-green-primary pt-45 pb-20 pl-20 -mt-30 text-white" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+    <ul>
+      <li class="text-left py-2"><a href="/winners/" class={currentPath === "winners/" ? "font-regular font-display uppercase" : "font-light font-display uppercase"}>HØJSKOLEOHOLD</a></li>
+
+      <li class="text-left py-2"><a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>SOMMERHØJSKOLE</a></li>
+      <li class="text-left py-2"><a href="/winners/" class={currentPath === "winners/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>PRISER</a></li>
+      <li class="text-left py-2"><a href="/info/" class={currentPath === "info/" ? "font-light font-display uppercase" : "font-light font-display uppercase"}>oM OS</a></li>
+      <li class="text-left">
+        <a href="">
+          <Button variant="third">Infomøder</Button>
+        </a>
+      </li>
+
+      <li class="text-left">
+        <a href="">
+          <Button>Tilmeld</Button>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

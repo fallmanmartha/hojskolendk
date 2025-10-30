@@ -3,13 +3,13 @@
 const { variant = "primary", size = "small" } = Astro.props;
 
 //Definer den styling (Tailwind classes, der gør sig gældende for alle knapper)
-const buttonStyling = "border-1 px-7 py-3 font-heading uppercase hover:shadow-xl rounded-full";
+const buttonStyling = "border-1 px-7 py-2.5 font-heading uppercase hover:shadow-xl rounded-full";
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskellige varianter
 const variantClasses = {
   primary: "bg-orange-primary text-white hover:bg-orange-secondary hover:text-white mt-5",
   secondary: "bg-green-secondary text-white hover:bg-green-primary hover:text-white mt-5",
-  third: "border-white bg-white text-white hover:bg-gray-200 hover:text-white mt-5",
+  third: "border-white text-white hover:bg-gray-100/20 hover:text-white mt-5",
 };
 
 //Definer den styling (Tailwind classes), der gør sig gældende for de forskelligeog størrelser.
