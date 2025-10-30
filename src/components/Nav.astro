@@ -35,9 +35,9 @@ import Button from "./Button.astro";
     </nav>
     <button id="burgermenu" class="lg:hidden w-15" x-on:click="showmenu = ! showmenu"><img src="/burgericon.svg" alt="burgericon" /> </button>
   </div>
-  <nav id="mobilmenu" class="flex flex-col content-center bg-green-primary pt-45 pb-20 pl-20 -mt-30 text-white" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
+  <nav id="mobilmenu" class="flex flex-col content-center bg-green-primary pt-40 pb-30 pl-10 -mt-30 text-white" x-show="showmenu" x-transition x-on:click="showmenu = false" x-on:click.outside="showmenu = false">
     <ul>
-      <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-regular font-heading uppercase" : "font-light font-heading uppercase"}>HØJSKOLEOHOLD</a></li>
+      <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-regular font-heading uppercase" : "font-regular font-heading uppercase"}>HØJSKOLEOHOLD</a></li>
 
       <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-regular font-heading uppercase" : "font-regular font-heading uppercase"}>SOMMERHØJSKOLE</a></li>
       <li class="text-left py-2"><a href="/" class={currentPath === "/" ? "font-regular font-heading uppercase" : "font-regular font-heading uppercase"}>PRISER</a></li>
