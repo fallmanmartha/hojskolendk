@@ -1,0 +1,99 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+---
+
+<section
+  class="mt-10 lg:grid grid-cols-12 gap-15 lg:mx-[100px] mx-[30px] mt-25"
+>
+  <div class="relative col-span-7 overflow-hidden rounded-2xl">
+    <img src="/public/video.png" alt="" />
+  </div>
+  <article class="col-span-5">
+    <div class="lg:mb-13 mb-7">
+      <Heading
+        htmlheading="h2"
+        size="large"
+        font="display"
+        transform="uppercase">DIT LIVS EVENTYR</Heading
+      >
+    </div>
+    <div class="">
+      <Text
+        >HÖJSKOLENDK er en dansk højskole for unge i alderen ca. 18-30 år.
+      </Text>
+      <Text
+        >Vi brænder for oplevelser, fællesskab og mødet med nye mennesker og
+        kulturer; derfor laver vi eventyrlige højskoleophold i udlandet.
+      </Text>
+      <Text
+        >HÖJSKOLENDK er noget for dig, hvis du vil på højskole i udlandet og er
+        vild med højskolefællesskab, vil med på et fantastisk rejseeventyr,
+        glæder dig til at lære om fremmede kulturer, vil rejse med rygsæk,
+        drømmer om en fed grupperejse med andre skønne unge, vil opleve et
+        stærkt sammenhold og ønsker inspirerende og meningsfuld undervisning.
+      </Text>
+      <Text
+        >Du er sikker på en tryg rejseoplevelse da vi er medlem af
+        Rejsegarantifonden.
+      </Text>
+    </div>
+    <div class="mt-1">
+      <Button>SE ALLE REJSER</Button>
+    </div>
+  </article>
+</section>
+
+<section class="mt-10 grid grid-cols-12 gap-15">
+  <article class="col-start-4 col-end-8">
+    <div class="lg:mb-8 mb-7">
+      <Heading
+        htmlheading="h2"
+        size="large"
+        font="display"
+        transform="uppercase">INFOMØDER</Heading
+      >
+    </div>
+    <div class="">
+      <Text
+        >Kig forbi et af vores hyggelige infomøder i København, Aarhus eller
+        online. Vi glæder os til at møde dig!
+      </Text>
+    </div>
+    <div class="mt-1">
+      <Button variant="secondary">TILMELD INFOMØDE</Button>
+    </div>
+  </article>
+  <article class="col-start-8 col-end-11">
+    <div class="mb-6">
+      <div class="mb-1">
+        <Heading htmlheading="h4" size="small" font="display">KØBENHAVN</Heading
+        >
+      </div>
+      <div>
+        <Text>18.November 2025 Kl. 17-19 </Text>
+      </div>
+    </div>
+    <div class="mb-6">
+      <div class="mb-1">
+        <Heading htmlheading="h4" size="small" font="display">ÅRHUS</Heading>
+      </div>
+      <div>
+        <Text>6.November 2025 Kl. 17-19 </Text>
+      </div>
+    </div>
+    <div class="mb-6">
+      <div class="mb-1">
+        <Heading htmlheading="h4" size="small" font="display"
+          >ONLINE NFOMØDE</Heading
+        >
+      </div>
+      <div>
+        <Text
+          >12. November 2025 Kl. 17-19 <br /> 10. November 2025 Kl. 17-19
+        </Text>
+      </div>
+    </div>
+  </article>
+</section>

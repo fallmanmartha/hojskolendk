@@ -1,0 +1,49 @@
+---
+import Heading from "./Heading.astro";
+import Text from "./Text.astro";
+import Button from "./Button.astro";
+import Sektion7Cards from "./Sektion7cards.astro";
+---
+
+<div class="lg:mx-[100px] mx-[30px] mt-25">
+  <div class="lg:mb-13 mt-13 mb-7">
+    <Heading htmlheading="h2" size="large" font="display" transform="uppercase"
+      >BLOG</Heading
+    >
+  </div>
+
+  <section
+    x-data="{ active: 0, total: 2 }"
+    class="relative hidden pt-16 lg:block"
+  >
+    <div class="absolute left-0 top-0 z-20 flex gap-3 mb-7">
+      <button
+        type="button"
+        class="flex h-12 w-12 items-center justify-center rounded-full bg-transparent transition hover:scale-105"
+        @click="active = (active - 1 + total) % total"
+        aria-label="Forrige sektion"
+      >
+        <img src="/blackarrow.svg" alt="" class="h-12 w-12 rotate-180" />
+      </button>
+      <button
+        type="button"
+        class="flex h-12 w-12 items-center justify-center rounded-full bg-transparent transition hover:scale-105"
+        @click="active = (active + 1) % total"
+        aria-label="Næste sektion"
+      >
+        <img src="/blackarrow.svg" alt="" class="h-12 w-12" />
+      </button>
+    </div>
+
+    <div class="overflow-hidden">
+      <div
+        class="flex transition-transform duration-500 ease-out"
+        :style="`transform: translateX(-${active * 100}%);`"
+      >
+        <div class="w-full shrink-0 px-0 sm:py-2 md:py-2">
+          <Sektion7Cards />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
