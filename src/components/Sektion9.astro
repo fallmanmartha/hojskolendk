@@ -3,30 +3,21 @@ import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 ---
 
-<div class="relative w-screen overflow-hidden mt-10">
-  <img src="/public/skov.png" class="w-full object-cover" alt="" />
+<div class="relative w-screen overflow-hidden mt-20 md:mt-30">
+  <img src="/skov.png" class="w-full h-80 object-cover" alt="" />
 
   <section class="absolute inset-0 flex flex-col items-center justify-center">
     <div class="md:grid grid-cols-12 gap-8 text-white">
       <div class="flex justify-center col-start-2 col-end-6">
-        <img src="/public/skov_logo.svg" alt="" />
+        <img src="/skov_logo.svg" alt="skovlogo" class="w-40 md:w-full" />
       </div>
-      <div class="col-start-6 col-end-11">
-        <div class="lg:mb-8 mb-7">
-          <Heading htmlheading="h3" size="medium" font="display"
-            >VI GØR EN FORSKEL</Heading
-          >
+      <div class="col-start-6 col-end-11 pr-20 pl-20 md:pr-8">
+        <div class="text-center pt-6 md:text-left lg:mb-8 mb-7">
+          <Heading htmlheading="h3" size="medium" font="display">VI GØR EN FORSKEL</Heading>
         </div>
-        <div class="">
-          <Text
-            >Vi tror på at alle kan gøre en forskel – selv en højskole fra
-            Danmark.
-          </Text>
-          <Text
-            >Vi støtter derfor Verdens Skoves arbejde med bevarelse og
-            bæredygtig brug af verdens skove. Vi har allerede fredet 106.785 m²
-            regnskov. Dét er vi stolte af i HØJSKOLENDK.
-          </Text>
+        <div class="text-center md:text-left">
+          <Text>Vi tror på at alle kan gøre en forskel – selv en højskole fra Danmark. </Text>
+          <Text>Vi støtter derfor Verdens Skoves arbejde med bevarelse og bæredygtig brug af verdens skove. Vi har allerede fredet 106.785 m² regnskov. Dét er vi stolte af i HØJSKOLENDK. </Text>
         </div>
       </div>
     </div>
