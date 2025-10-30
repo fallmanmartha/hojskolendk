@@ -2,48 +2,189 @@
 import Heading from "./Heading.astro";
 import Text from "./Text.astro";
 import Button from "./Button.astro";
-import Sektion7Cards from "./Sektion7cards.astro";
 ---
 
-<div class="lg:mx-[100px] mx-[30px] mt-25">
-  <div class="lg:mb-13 mt-13 mb-7">
-    <Heading htmlheading="h2" size="large" font="display" transform="uppercase"
-      >BLOG</Heading
-    >
+<section class="md:mt-20 lg:mx-[90px] mx-[30px]">
+  <!-- Overskrift -->
+  <div class="mt-15">
+    <div class="mb-4">
+      <Heading
+        htmlheading="h2"
+        size="large"
+        font="display"
+        transform="uppercase"
+      >
+        BLOG
+      </Heading>
+    </div>
   </div>
 
-  <section
-    x-data="{ active: 0, total: 2 }"
-    class="relative hidden pt-16 lg:block"
+  <!-- SLIDER -->
+  <div
+    x-data="{ active: 0, total: 3 }"
+    class="relative w-full max-w-7xl mx-auto mt-10 px-0"
   >
-    <div class="absolute left-0 top-0 z-20 flex gap-3 mb-7">
+    <!-- Piler -->
+    <div class="flex items-center gap-3 mb-6">
       <button
         type="button"
-        class="flex h-12 w-12 items-center justify-center rounded-full bg-transparent transition hover:scale-105"
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-transparent hover:scale-105 transition"
         @click="active = (active - 1 + total) % total"
-        aria-label="Forrige sektion"
+        aria-label="Forrige"
       >
-        <img src="/blackarrow.svg" alt="" class="h-12 w-12 rotate-180" />
+        <img
+          src="/blackarrow.svg"
+          alt="Venstre pil"
+          class="h-12 w-12 rotate-180"
+        />
       </button>
+
       <button
         type="button"
-        class="flex h-12 w-12 items-center justify-center rounded-full bg-transparent transition hover:scale-105"
+        class="flex h-10 w-10 items-center justify-center rounded-full bg-transparent hover:scale-105 transition"
         @click="active = (active + 1) % total"
-        aria-label="Næste sektion"
+        aria-label="Næste"
       >
-        <img src="/blackarrow.svg" alt="" class="h-12 w-12" />
+        <img src="/blackarrow.svg" alt="Højre pil" class="h-12 w-12" />
       </button>
     </div>
 
+    <!-- Slides -->
     <div class="overflow-hidden">
       <div
         class="flex transition-transform duration-500 ease-out"
         :style="`transform: translateX(-${active * 100}%);`"
       >
-        <div class="w-full shrink-0 px-0 sm:py-2 md:py-2">
-          <Sektion7Cards />
+        <!-- SLIDE 1 -->
+        <div class="w-full shrink-0">
+          <section class="lg:grid grid-cols-12 gap-15">
+            <div class="col-span-7">
+              <img
+                src="/dykkebilde.png"
+                class="w-full rounded-3xl object-cover"
+                alt=""
+              />
+            </div>
+            <article class="col-span-5 mt-13">
+              <div class="lg:mb-6 mb-7">
+                <Heading
+                  htmlheading="h3"
+                  size="medium"
+                  font="display"
+                  transform="uppercase"
+                >
+                  GLEM JAGTEN PÅ LYKKE
+                </Heading>
+              </div>
+              <div>
+                <Text>
+                  Hvordan kan det være at flere mennesker end nogensinde oplever
+                  stress, angst, depression, ensomhed, m.v. når vi lever i en
+                  tid med mere velstand, flere muligheder og et højere
+                  uddannelsesniveau end nogensinde før?
+                </Text>
+                <Text>
+                  Antallet af unge der bliver diagnosticeret med angst og stress
+                  er tredoblet de sidste 10 år og aldrig før har så mange unge
+                  følt sig fortvivlede, ensomme, triste, usikre og forvirrede og
+                  det er der mange grunde til. Én af dem er jeg sikker på
+                  handler om ”jagten på lykke” og ”det perfekte liv”.
+                </Text>
+              </div>
+              <div class="mt-1">
+                <Button variant="secondary">LÆS MERE</Button>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <!-- SLIDE 2 -->
+        <div class="w-full shrink-0">
+          <section class="lg:grid grid-cols-12 gap-15">
+            <div class="col-span-7">
+              <img
+                src="/slidebilde2.png"
+                class="w-full rounded-3xl object-cover shadow-sm"
+                alt=""
+              />
+            </div>
+            <article class="col-span-5 mt-13">
+              <div class="lg:mb-6 mb-7">
+                <Heading
+                  htmlheading="h3"
+                  size="medium"
+                  font="display"
+                  transform="uppercase"
+                >
+                  DIT SABBATÅR - MAKE THE MOST OF IT
+                </Heading>
+              </div>
+              <div>
+                <Text>
+                  Hvis du skal ha’ dig et (eller flere) sabbatår, drømmer du
+                  sikkert om at det bliver verdens fedeste år. For lige
+                  nøjagtigt dig – og det forstår vi godt.
+                </Text>
+                <Text>
+                  Men det kan være hulens svært at finde ud af hvad man
+                  allerhelst vil bruge sit sabbatår på, for der er så mange
+                  spændende ting, man kan kaste sig ud i. Det var blandt andet
+                  derfor jeg startede HÖJSKOLENDK for 14 år siden, så man kunne
+                  kombinere to af de allerbedste ting man kan bruge sit sabbatår
+                  på; en fantastisk højskoleoplevelse og et vildt rejseeventyr.
+                </Text>
+              </div>
+              <div class="mt-1">
+                <Button variant="secondary">LÆS MERE</Button>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <!-- SLIDE 3 -->
+        <div class="w-full shrink-0">
+          <section class="lg:grid grid-cols-12 gap-15">
+            <div class="col-span-7">
+              <img
+                src="/slidebilde3.png"
+                class="w-full rounded-3xl object-cover shadow-sm"
+                alt=""
+              />
+            </div>
+            <article class="col-span-5 mt-13">
+              <div class="lg:mb-6 mb-7">
+                <Heading
+                  htmlheading="h3"
+                  size="medium"
+                  font="display"
+                  transform="uppercase"
+                >
+                  TANKER FRA EN UBEGRIBELIG TID
+                </Heading>
+              </div>
+              <div>
+                <Text>
+                  For 11 år siden tog jeg de første skridt for at realisere en
+                  drøm. En drøm om at skabe et arbejdsliv med dyb mening, fyldt
+                  med passion og livsglæde.
+                </Text>
+                <Text>
+                  Vi har fra start skabt en højskole, der var stærkt drevet af
+                  vores værdier. De værdier er ligeværd, respekt, rummelighed,
+                  nærvær, mod, selvrefleksion, tillid og ærlighed. Det har altid
+                  været enormt vigtigt for mig, at de værdier ikke blot var ord,
+                  der stod på vores hjemmeside – men levede stærkt og naturligt
+                  i både hverdag på kontoret og på vores højskoleophold i
+                  udlandet.
+                </Text>
+              </div>
+              <div class="mt-1">
+                <Button variant="secondary">LÆS MERE</Button>
+              </div>
+            </article>
+          </section>
         </div>
       </div>
     </div>
-  </section>
-</div>
+  </div>
+</section>
