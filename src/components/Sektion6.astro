@@ -4,48 +4,27 @@ import Text from "./Text.astro";
 ---
 
 <div class="relative w-screen overflow-hidden">
-  <img src="/public/devider.png" class="w-full object-cover" alt="" />
+  <img src="/public/devider.png" class="w-full h-80 object-fit" alt="" />
 
-  <section class="absolute inset-0 flex flex-col items-center justify-center">
+  <section class="absolute inset-0 flex flex-col items-center justify-center mx-[30px] md:mx-[90px]">
     <div class="md:grid grid-cols-3 gap-15 text-center text-white">
       <div class="">
-        <Heading htmlheading="h3" size="medium" font="display"
-          >HØJSKOLE I UDLANDET SIDEN</Heading
-        >
-        <div class="lg:mt-6 mb-7">
-          <Heading
-            htmlheading="h1"
-            size="xlarge"
-            font="display"
-            transform="uppercase">2010</Heading
-          >
+        <Heading htmlheading="h3" size="medium" font="display">HØJSKOLE I UDLANDET SIDEN</Heading>
+        <div class="mt-4 lg:mt-6 mb-7">
+          <Heading htmlheading="h2" size="large" font="display" transform="uppercase">2010</Heading>
         </div>
       </div>
       <div class="">
-        <Heading htmlheading="h3" size="medium" font="display"
-          >GLADE ELEVER</Heading
-        >
-        <div class="lg:mt-6 mb-7">
-          <Heading
-            htmlheading="h1"
-            size="xlarge"
-            font="display"
-            transform="uppercase">3.000+</Heading
-          >
+        <Heading htmlheading="h3" size="medium" font="display">GLADE ELEVER</Heading>
+        <div class="mt-4 lg:mt-6 mb-7">
+          <Heading htmlheading="h2" size="large" font="display" transform="uppercase">3.000+</Heading>
         </div>
       </div>
 
       <div class="">
-        <Heading htmlheading="h3" size="medium" font="display"
-          >ANBEFALER HÖJSKOLENDK</Heading
-        >
-        <div class="lg:mt-6 mb-7">
-          <Heading
-            htmlheading="h1"
-            size="xlarge"
-            font="display"
-            transform="uppercase">96%</Heading
-          >
+        <Heading htmlheading="h3" size="medium" font="display">ANBEFALER HÖJSKOLENDK</Heading>
+        <div class="mt-4 lg:mt-6">
+          <Heading htmlheading="h2" size="large" font="display" transform="uppercase">96%</Heading>
         </div>
       </div>
     </div>
